@@ -23,7 +23,7 @@ export default function Form({ onAdd }: FormProps) {
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleEnterKey}
         placeholder="Enter a task"
-        className="flex-1  rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900 w-full sm:w-auto"
+        className="flex-1 border border-slate-800 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900 w-full sm:w-auto"
       />
       <button
         onClick={handleSubmit}

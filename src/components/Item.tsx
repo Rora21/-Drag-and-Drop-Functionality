@@ -6,21 +6,21 @@ interface ItemProps {
   setTodos: Dispatch<SetStateAction<Todo[]>>;
 }
 export default function Item({ todo, todos, setTodos }: ItemProps) {
-  // Toggle completed state
+ 
   const toggleCompleted = () => {
     const updated = todos.map((t) =>
       t.id === todo.id ? { ...t, completed: !t.completed } : t
     );
     setTodos(updated);
   };
-  // Delete todo
+  
   const deleteItem = () => {
     const updated = todos.filter((t) => t.id !== todo.id);
     setTodos(updated);
   };
   return (
     <div className="flex items-center justify-between w-full">
-      {/* Task text */}
+      {}
       <div
         className={`flex-1 text-slate-800 ${
           todo.completed ? "line-through text-slate-400" : ""
@@ -28,7 +28,7 @@ export default function Item({ todo, todos, setTodos }: ItemProps) {
       >
         {todo.text}
       </div>
-      {/* Buttons */}
+      {}
       <div className="flex gap-2">
         <button
           onClick={toggleCompleted}

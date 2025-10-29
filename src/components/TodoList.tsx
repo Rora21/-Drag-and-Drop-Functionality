@@ -8,8 +8,8 @@ interface TodoListProps {
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 export default function TodoList({ todos, setTodos }: TodoListProps) {
-  // function called when drag ends
-  const handleDragEnd = (result: DropResult) => {
+ 
+  const handleDragFree = (result: DropResult) => {
     if (!result.destination) return;
     const updatedTodos = Array.from(todos);
     const [movedItem] = updatedTodos.splice(result.source.index, 1);
@@ -17,7 +17,7 @@ export default function TodoList({ todos, setTodos }: TodoListProps) {
     setTodos(updatedTodos);
   };
   return (
-    <DragDropContext onDragEnd={handleDragEnd}>
+    <DragDropContext onDragEnd={handleDragFree}>
       <Droppable droppableId="todos">
         {(provided) => (
           <ul

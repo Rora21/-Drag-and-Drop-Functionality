@@ -8,12 +8,12 @@ export interface Todo {
   completed: boolean;
 }
 export default function App() {
-  // Load todos from localStorage 
+
   const [todos, setTodos] = useState<Todo[]>(() => {
     const saved = localStorage.getItem("todos");
     return saved ? JSON.parse(saved) : [];
   });
-  // Save todos to localStorage
+
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -30,8 +30,7 @@ export default function App() {
       <div className="w-full max-w-2xl">
         <div className="bg-rose-100 rounded-2xl shadow-md p-6 sm:p-8">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-semibold text-slate-800">To-Do List</h1>
-            <p className="text-sm text-slate-500">Drag to reorder</p>
+            <h1 className="text-2xl font-bold text-slate-800">List what to do</h1>
           </div>
           <Form onAdd={addTodo} />
           <div className="mt-6">

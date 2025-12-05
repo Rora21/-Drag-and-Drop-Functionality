@@ -1,4 +1,4 @@
-import React from "react";
+
 type TaskItemProps = {
   id: string;
   text: string;
